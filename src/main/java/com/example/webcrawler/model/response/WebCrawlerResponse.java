@@ -8,7 +8,7 @@ public class WebCrawlerResponse implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    Set<SearchResult> searchResults;
+    private Set<SearchResult> searchResults;
 
     public Set<SearchResult> getSearchResults() {
         return searchResults;
