@@ -1,4 +1,4 @@
-package com.example.webcrawler.controller.response;
+package com.example.webcrawler.model.response;
 
 import java.io.Serializable;
 import java.util.Objects;

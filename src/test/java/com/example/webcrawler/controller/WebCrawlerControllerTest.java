@@ -1,8 +1,8 @@
 package com.example.webcrawler.controller;
 
-import com.example.webcrawler.controller.request.WebCrawlerRequest;
-import com.example.webcrawler.controller.response.SearchResult;
-import com.example.webcrawler.controller.response.WebCrawlerResponse;
+import com.example.webcrawler.model.request.WebCrawlerRequest;
+import com.example.webcrawler.model.response.SearchResult;
+import com.example.webcrawler.model.response.WebCrawlerResponse;
 import com.example.webcrawler.service.WebCrawlerService;
 import org.junit.Before;
 import org.junit.Test;

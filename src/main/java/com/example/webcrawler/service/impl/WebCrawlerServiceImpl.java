@@ -1,8 +1,8 @@
 package com.example.webcrawler.service.impl;
 
-import com.example.webcrawler.controller.request.WebCrawlerRequest;
-import com.example.webcrawler.controller.response.SearchResult;
-import com.example.webcrawler.controller.response.WebCrawlerResponse;
+import com.example.webcrawler.model.request.WebCrawlerRequest;
+import com.example.webcrawler.model.response.SearchResult;
+import com.example.webcrawler.model.response.WebCrawlerResponse;
 import com.example.webcrawler.service.WebCrawlerService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Component
 public class WebCrawlerServiceImpl implements WebCrawlerService {
 
-    Logger logger = LoggerFactory.getLogger(WebCrawlerServiceImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(WebCrawlerServiceImpl.class);
 
     @Override
     public WebCrawlerResponse getSearchTextFromUrl(WebCrawlerRequest webCrawlerRequest) {
@@ -43,6 +43,7 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
             logger.error("Exception in WebCrawlerServiceImpl :: getSearchTextFromUrl : {}", e.getMessage());
         }
         webCrawlerResponse.setSearchResults(searchResults);
+        logger.debug("Response in WebCrawlerServiceImpl :: getSearchTextFromUrl : {}", webCrawlerResponse);
         return webCrawlerResponse;
     }
 

@@ -1,4 +1,4 @@
-package com.example.webcrawler.controller.request;
+package com.example.webcrawler.model.request;
 
 
 import javax.validation.constraints.NotNull;
