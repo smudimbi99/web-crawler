@@ -1,6 +1,7 @@
 package com.example.webcrawler.service.impl;
 
 import com.example.webcrawler.model.request.WebCrawlerRequest;
+import com.example.webcrawler.model.response.SearchResult;
 import com.example.webcrawler.model.response.WebCrawlerResponse;
 import com.example.webcrawler.service.WebCrawlerService;
 import org.junit.Test;
@@ -34,12 +35,11 @@ public class WebCrawlerServiceImplTest {
         WebCrawlerService webCrawlerService = new WebCrawlerServiceImpl();
         WebCrawlerResponse response = webCrawlerService.getSearchTextFromUrl(webCrawlerRequest);
 
-        assertEquals(2, response.getSearchResults().size());
-
-        assertEquals("http://www.google.com/intl/en/about.html", response.getSearchResults().get(0).getPageUrl());
-        assertEquals(expectedText, response.getSearchResults().get(0).getText());
-        assertEquals("http://www.google.com/intl/en/about.html", response.getSearchResults().get(1).getPageUrl());
-        assertEquals(expectedText, response.getSearchResults().get(1).getText());
+        assertEquals(1, response.getSearchResults().size());
+        for (SearchResult searchResult : response.getSearchResults()) {
+            assertEquals("http://www.google.com/intl/en/about.html", searchResult.getPageUrl());
+            assertEquals(expectedText, searchResult.getText());
+        }
     }
 
     @Test

@@ -1,20 +1,20 @@
 package com.example.webcrawler.model.response;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class WebCrawlerResponse implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    List<SearchResult> searchResults;
+    Set<SearchResult> searchResults;
 
-    public List<SearchResult> getSearchResults() {
+    public Set<SearchResult> getSearchResults() {
         return searchResults;
     }
 
-    public void setSearchResults(List<SearchResult> searchResults) {
+    public void setSearchResults(Set<SearchResult> searchResults) {
         this.searchResults = searchResults;
     }
 

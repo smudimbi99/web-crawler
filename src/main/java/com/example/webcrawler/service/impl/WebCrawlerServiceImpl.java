@@ -13,8 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -26,7 +25,7 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
     @Override
     public WebCrawlerResponse getSearchTextFromUrl(WebCrawlerRequest webCrawlerRequest) {
         WebCrawlerResponse webCrawlerResponse = new WebCrawlerResponse();
-        List<SearchResult> searchResults = new ArrayList<>();
+        Set<SearchResult> searchResults = new HashSet<>();
         try {
             Set<String> pageUrls = getPageUrls(webCrawlerRequest.getUrl());
             pageUrls.add(webCrawlerRequest.getUrl());

@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Objects;
 
 import static org.junit.Assert.assertEquals;
@@ -47,7 +48,7 @@ public class WebCrawlerControllerTest {
 
         String webCrawlerRequest = "{\"url\":\"http://www.google.com\",\"text\":\"test\"}";
         WebCrawlerResponse webCrawlerResponse = new WebCrawlerResponse();
-        webCrawlerResponse.setSearchResults(Collections.singletonList(new SearchResult("http://www.google.com", "test")));
+        webCrawlerResponse.setSearchResults(new HashSet<>(Collections.singletonList(new SearchResult("http://www.google.com", "test"))));
 
         when(webCrawlerService.getSearchTextFromUrl(isA(WebCrawlerRequest.class))).thenReturn(webCrawlerResponse);
 
